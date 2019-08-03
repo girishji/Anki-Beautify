@@ -8,17 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		1C34FCF6F255D9A01BC86D49 /* Pods_Anki_BeautifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8327D6F512CE727D9BBEA93 /* Pods_Anki_BeautifyTests.framework */; };
-		3DEC58DE085ADCD575133FD5 /* Pods_Anki_Beautify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7591A8816D54FC24FD5E4DCE /* Pods_Anki_Beautify.framework */; };
+		45768F73C830427787AD8BE1 /* Pods_Anki_Beautify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7591A8816D54FC24FD5E4DCE /* Pods_Anki_Beautify.framework */; };
+		8AFDDD86B0FCB6ABD8DEB1A1 /* Pods_Anki_Beautify_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40A32B6100BA0D5BBAC5904 /* Pods_Anki_Beautify_Extension.framework */; };
 		E346322822F611A9003AD691 /* PasteboardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E346322722F611A9003AD691 /* PasteboardFormat.swift */; };
+		E346323022F614B6003AD691 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E346322F22F614B6003AD691 /* Media.xcassets */; };
+		E346323222F614B6003AD691 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E346323122F614B6003AD691 /* ActionRequestHandler.swift */; };
+		E346323422F614B6003AD691 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = E346323322F614B6003AD691 /* Action.js */; };
+		E346323822F614B6003AD691 /* Anki Beautify Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E346322D22F614B5003AD691 /* Anki Beautify Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E3CE97C622F60DF400D315D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE97C522F60DF400D315D1 /* AppDelegate.swift */; };
 		E3CE97C822F60DF400D315D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE97C722F60DF400D315D1 /* ViewController.swift */; };
 		E3CE97CB22F60DF400D315D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CE97C922F60DF400D315D1 /* Main.storyboard */; };
 		E3CE97CD22F60DF600D315D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3CE97CC22F60DF600D315D1 /* Assets.xcassets */; };
 		E3CE97D022F60DF600D315D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CE97CE22F60DF600D315D1 /* LaunchScreen.storyboard */; };
 		E3CE97DB22F60DF600D315D1 /* Anki_BeautifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE97DA22F60DF600D315D1 /* Anki_BeautifyTests.swift */; };
+		E3D2FE2E22F61C4B009A292C /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34F110622F61B1200EECB30 /* SwiftSoup.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E346323622F614B6003AD691 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3CE97BA22F60DF400D315D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E346322C22F614B5003AD691;
+			remoteInfo = "Anki Beautify Extension";
+		};
 		E3CE97D722F60DF600D315D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E3CE97BA22F60DF400D315D1 /* Project object */;
@@ -28,14 +41,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E346323C22F614B6003AD691 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E346323822F614B6003AD691 /* Anki Beautify Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		011BC3116DB3F3365F9169B3 /* Pods-Anki BeautifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anki BeautifyTests.release.xcconfig"; path = "Target Support Files/Pods-Anki BeautifyTests/Pods-Anki BeautifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		59B41D4A30F04CE1D8543982 /* Pods-Anki Beautify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anki Beautify.debug.xcconfig"; path = "Target Support Files/Pods-Anki Beautify/Pods-Anki Beautify.debug.xcconfig"; sourceTree = "<group>"; };
 		7591A8816D54FC24FD5E4DCE /* Pods_Anki_Beautify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anki_Beautify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		899F0DCC2DB4EE520C701744 /* Pods-Anki Beautify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anki Beautify.release.xcconfig"; path = "Target Support Files/Pods-Anki Beautify/Pods-Anki Beautify.release.xcconfig"; sourceTree = "<group>"; };
 		8ACBB7A0C22211B817F7F7AD /* Pods-Anki BeautifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anki BeautifyTests.debug.xcconfig"; path = "Target Support Files/Pods-Anki BeautifyTests/Pods-Anki BeautifyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2A879BB80DAC43BCD7E31D7 /* Pods-Anki Beautify Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anki Beautify Extension.release.xcconfig"; path = "Target Support Files/Pods-Anki Beautify Extension/Pods-Anki Beautify Extension.release.xcconfig"; sourceTree = "<group>"; };
 		B8327D6F512CE727D9BBEA93 /* Pods_Anki_BeautifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anki_BeautifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D40A32B6100BA0D5BBAC5904 /* Pods_Anki_Beautify_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anki_Beautify_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4BB1E7C2C47518C1315E4B3 /* Pods-Anki Beautify Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anki Beautify Extension.debug.xcconfig"; path = "Target Support Files/Pods-Anki Beautify Extension/Pods-Anki Beautify Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		E346322722F611A9003AD691 /* PasteboardFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardFormat.swift; sourceTree = "<group>"; };
+		E346322D22F614B5003AD691 /* Anki Beautify Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Anki Beautify Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E346322F22F614B6003AD691 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		E346323122F614B6003AD691 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		E346323322F614B6003AD691 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		E346323522F614B6003AD691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E34F110622F61B1200EECB30 /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CE97C222F60DF400D315D1 /* Anki Beautify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anki Beautify.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CE97C522F60DF400D315D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3CE97C722F60DF400D315D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,11 +85,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E346322A22F614B5003AD691 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D2FE2E22F61C4B009A292C /* SwiftSoup.framework in Frameworks */,
+				8AFDDD86B0FCB6ABD8DEB1A1 /* Pods_Anki_Beautify_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3CE97BF22F60DF400D315D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DEC58DE085ADCD575133FD5 /* Pods_Anki_Beautify.framework in Frameworks */,
+				45768F73C830427787AD8BE1 /* Pods_Anki_Beautify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,8 +116,10 @@
 		515932B12DAEF14DFF7F1136 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E34F110622F61B1200EECB30 /* SwiftSoup.framework */,
 				7591A8816D54FC24FD5E4DCE /* Pods_Anki_Beautify.framework */,
 				B8327D6F512CE727D9BBEA93 /* Pods_Anki_BeautifyTests.framework */,
+				D40A32B6100BA0D5BBAC5904 /* Pods_Anki_Beautify_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -84,8 +131,21 @@
 				899F0DCC2DB4EE520C701744 /* Pods-Anki Beautify.release.xcconfig */,
 				8ACBB7A0C22211B817F7F7AD /* Pods-Anki BeautifyTests.debug.xcconfig */,
 				011BC3116DB3F3365F9169B3 /* Pods-Anki BeautifyTests.release.xcconfig */,
+				D4BB1E7C2C47518C1315E4B3 /* Pods-Anki Beautify Extension.debug.xcconfig */,
+				A2A879BB80DAC43BCD7E31D7 /* Pods-Anki Beautify Extension.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E346322E22F614B6003AD691 /* Anki Beautify Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E346322F22F614B6003AD691 /* Media.xcassets */,
+				E346323122F614B6003AD691 /* ActionRequestHandler.swift */,
+				E346323322F614B6003AD691 /* Action.js */,
+				E346323522F614B6003AD691 /* Info.plist */,
+			);
+			path = "Anki Beautify Extension";
 			sourceTree = "<group>";
 		};
 		E3CE97B922F60DF400D315D1 = {
@@ -93,6 +153,7 @@
 			children = (
 				E3CE97C422F60DF400D315D1 /* Anki Beautify */,
 				E3CE97D922F60DF600D315D1 /* Anki BeautifyTests */,
+				E346322E22F614B6003AD691 /* Anki Beautify Extension */,
 				E3CE97C322F60DF400D315D1 /* Products */,
 				59D77414525C1A86BBC30562 /* Pods */,
 				515932B12DAEF14DFF7F1136 /* Frameworks */,
@@ -104,6 +165,7 @@
 			children = (
 				E3CE97C222F60DF400D315D1 /* Anki Beautify.app */,
 				E3CE97D622F60DF600D315D1 /* Anki BeautifyTests.xctest */,
+				E346322D22F614B5003AD691 /* Anki Beautify Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,11 +175,11 @@
 			children = (
 				E3CE97C522F60DF400D315D1 /* AppDelegate.swift */,
 				E3CE97C722F60DF400D315D1 /* ViewController.swift */,
+				E346322722F611A9003AD691 /* PasteboardFormat.swift */,
 				E3CE97C922F60DF400D315D1 /* Main.storyboard */,
 				E3CE97CC22F60DF600D315D1 /* Assets.xcassets */,
 				E3CE97CE22F60DF600D315D1 /* LaunchScreen.storyboard */,
 				E3CE97D122F60DF600D315D1 /* Info.plist */,
-				E346322722F611A9003AD691 /* PasteboardFormat.swift */,
 			);
 			path = "Anki Beautify";
 			sourceTree = "<group>";
@@ -134,6 +196,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E346322C22F614B5003AD691 /* Anki Beautify Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E346323922F614B6003AD691 /* Build configuration list for PBXNativeTarget "Anki Beautify Extension" */;
+			buildPhases = (
+				98B809884CF37A07EB656CFD /* [CP] Check Pods Manifest.lock */,
+				E346322922F614B5003AD691 /* Sources */,
+				E346322A22F614B5003AD691 /* Frameworks */,
+				E346322B22F614B5003AD691 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Anki Beautify Extension";
+			productName = "Anki Beautify Extension";
+			productReference = E346322D22F614B5003AD691 /* Anki Beautify Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E3CE97C122F60DF400D315D1 /* Anki Beautify */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3CE97DF22F60DF600D315D1 /* Build configuration list for PBXNativeTarget "Anki Beautify" */;
@@ -143,10 +223,12 @@
 				E3CE97BF22F60DF400D315D1 /* Frameworks */,
 				E3CE97C022F60DF400D315D1 /* Resources */,
 				802A05EF9F6510385A60D6F6 /* [CP] Embed Pods Frameworks */,
+				E346323C22F614B6003AD691 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E346323722F614B6003AD691 /* PBXTargetDependency */,
 			);
 			name = "Anki Beautify";
 			productName = "Anki Beautify";
@@ -182,6 +264,9 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = gpalya;
 				TargetAttributes = {
+					E346322C22F614B5003AD691 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 					E3CE97C122F60DF400D315D1 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -206,11 +291,21 @@
 			targets = (
 				E3CE97C122F60DF400D315D1 /* Anki Beautify */,
 				E3CE97D522F60DF600D315D1 /* Anki BeautifyTests */,
+				E346322C22F614B5003AD691 /* Anki Beautify Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E346322B22F614B5003AD691 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E346323422F614B6003AD691 /* Action.js in Resources */,
+				E346323022F614B6003AD691 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3CE97C022F60DF400D315D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,9 +387,39 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anki Beautify/Pods-Anki Beautify-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		98B809884CF37A07EB656CFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Anki Beautify Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E346322922F614B5003AD691 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E346323222F614B6003AD691 /* ActionRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3CE97BE22F60DF400D315D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,6 +441,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E346323722F614B6003AD691 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E346322C22F614B5003AD691 /* Anki Beautify Extension */;
+			targetProxy = E346323622F614B6003AD691 /* PBXContainerItemProxy */;
+		};
 		E3CE97D822F60DF600D315D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E3CE97C122F60DF400D315D1 /* Anki Beautify */;
@@ -343,6 +473,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E346323A22F614B6003AD691 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4BB1E7C2C47518C1315E4B3 /* Pods-Anki Beautify Extension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5B956CC42A;
+				INFOPLIST_FILE = "Anki Beautify Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.girish.Anki-Beautify.Anki-Beautify-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E346323B22F614B6003AD691 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2A879BB80DAC43BCD7E31D7 /* Pods-Anki Beautify Extension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5B956CC42A;
+				INFOPLIST_FILE = "Anki Beautify Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.girish.Anki-Beautify.Anki-Beautify-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E3CE97DD22F60DF600D315D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -463,6 +635,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59B41D4A30F04CE1D8543982 /* Pods-Anki Beautify.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B956CC42A;
@@ -483,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 899F0DCC2DB4EE520C701744 /* Pods-Anki Beautify.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B956CC42A;
@@ -546,6 +720,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E346323922F614B6003AD691 /* Build configuration list for PBXNativeTarget "Anki Beautify Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E346323A22F614B6003AD691 /* Debug */,
+				E346323B22F614B6003AD691 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E3CE97BD22F60DF400D315D1 /* Build configuration list for PBXProject "Anki Beautify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
