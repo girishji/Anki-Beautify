@@ -19,6 +19,10 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         
         var found = false
         
+        // girish
+        //NSLog("girish here 1")
+        PasteboardFormat.transform()
+        
         // Find the item containing the results from the JavaScript preprocessing.
         outer:
             for item in context.inputItems as! [NSExtensionItem] {
@@ -47,8 +51,6 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         // Here, do something, potentially asynchronously, with the preprocessing
         // results.
         
-        // girish
-        //PasteboardFormat.transform()
         
         // In this very simple example, the JavaScript will have passed us the
         // current background color style, if there is one. We will construct a
