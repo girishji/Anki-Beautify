@@ -164,6 +164,7 @@ class PasteboardFormat {
         let approved: Set<String> = ["div", "p", "br", "b", "i"]
         let BoldRE = "font-weight:[ ]+bold"
         let ItalicRE = "font-style:[ ]+italic"
+        let TitleTxt = "font-size:[ ]+26.66"
         let FilterThis = "Przykłady użycia"
         var insidePrzyklad = false
         
@@ -178,6 +179,9 @@ class PasteboardFormat {
             
             if let element = (node as? Element) {
                 let tag = element.tagName()
+                if isStyle(re: TitleTxt, element: element) { // could be in div or span
+                    formatted += "<em>"
+                }
                 if approved.contains(tag) {
                     formatted += "<\(tag)>"
                 }
@@ -213,22 +217,25 @@ class PasteboardFormat {
                 } else {
                     formatted += textNode.text()
                 }
-            } else if let element =  (node as? Element) {
-                if isStyle(re: BoldRE, element: element) {
-                    formatted += "</b>"
-                }
-                if isStyle(re: ItalicRE, element: element) {
-                    formatted += "</i>"
+            } else if let element =  (node as? Element) { // reverse order as head function
+                if element.tagName() == "div" {
+                    if try element.className() == "przyk sshow" {
+                        insidePrzyklad = false
+                    }
                 }
                 let tag = element.tagName()
                 // 'br' has no closing tag
                 if approved.contains(tag) && (tag != "br") {
                     formatted += "</\(tag)>"
                 }
-                if element.tagName() == "div" {
-                    if try element.className() == "przyk sshow" {
-                        insidePrzyklad = false
-                    }
+                if isStyle(re: ItalicRE, element: element) {
+                    formatted += "</i>"
+                }
+                if isStyle(re: BoldRE, element: element) {
+                    formatted += "</b>"
+                }
+                if isStyle(re: TitleTxt, element: element) {
+                    formatted += "</em>"
                 }
             }
         }
