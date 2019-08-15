@@ -161,7 +161,7 @@ class PasteboardFormat {
     class MyNodeVisitor: NodeVisitor {
         
         var formatted: String = "";
-        let approved: Set<String> = ["div", "p", "br", "b", "i"]
+        let approved: Set<String> = ["div", "p", "br", "b", "i", "u"]
         let BoldRE = "font-weight:[ ]+bold"
         let ItalicRE = "font-style:[ ]+italic"
         let TitleTxt = "font-size:[ ]+26.66"
@@ -179,17 +179,21 @@ class PasteboardFormat {
             
             if let element = (node as? Element) {
                 let tag = element.tagName()
-                if isStyle(re: TitleTxt, element: element) { // could be in div or span
-                    formatted += "<em>"
-                }
+                
                 if approved.contains(tag) {
                     formatted += "<\(tag)>"
+                }
+                if isStyle(re: TitleTxt, element: element) { // could be in div or span
+                    formatted += "<em>"
                 }
                 if isStyle(re: BoldRE, element: element) {
                     formatted += "<b>"
                 }
                 if isStyle(re: ItalicRE, element: element) {
                     formatted += "<i>"
+                }
+                if tag == "a" { // link
+                    formatted += "<u>"
                 }
                 if tag == "div" {
                     if try element.className() == "przyk sshow" {
@@ -224,9 +228,9 @@ class PasteboardFormat {
                     }
                 }
                 let tag = element.tagName()
-                // 'br' has no closing tag
-                if approved.contains(tag) && (tag != "br") {
-                    formatted += "</\(tag)>"
+                
+                if tag == "a" { // link
+                    formatted += "</u>"
                 }
                 if isStyle(re: ItalicRE, element: element) {
                     formatted += "</i>"
@@ -236,6 +240,10 @@ class PasteboardFormat {
                 }
                 if isStyle(re: TitleTxt, element: element) {
                     formatted += "</em>"
+                }
+                // 'br' has no closing tag
+                if approved.contains(tag) && (tag != "br") {
+                    formatted += "</\(tag)>"
                 }
             }
         }
