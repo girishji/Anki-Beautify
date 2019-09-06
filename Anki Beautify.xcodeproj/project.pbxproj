@@ -16,8 +16,8 @@
 		E346323422F614B6003AD691 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = E346323322F614B6003AD691 /* Action.js */; };
 		E346323822F614B6003AD691 /* Anki Beautify Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E346322D22F614B5003AD691 /* Anki Beautify Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E35E041022F61E5100455541 /* PasteboardFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E346322722F611A9003AD691 /* PasteboardFormat.swift */; };
-		E35E041222F6221800455541 /* star-128.png in Resources */ = {isa = PBXBuildFile; fileRef = E35E041122F6221700455541 /* star-128.png */; };
-		E35E042022F62F2900455541 /* iconstar.png in Resources */ = {isa = PBXBuildFile; fileRef = E35E041F22F62F2900455541 /* iconstar.png */; };
+		E3CAA0982322972E006CAFF1 /* star-128.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CAA0972322972E006CAFF1 /* star-128.png */; };
+		E3CAA09C232297FB006CAFF1 /* iconstar.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CAA09B232297FB006CAFF1 /* iconstar.png */; };
 		E3CE97C622F60DF400D315D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE97C522F60DF400D315D1 /* AppDelegate.swift */; };
 		E3CE97C822F60DF400D315D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE97C722F60DF400D315D1 /* ViewController.swift */; };
 		E3CE97CB22F60DF400D315D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CE97C922F60DF400D315D1 /* Main.storyboard */; };
@@ -75,8 +75,8 @@
 		E346323322F614B6003AD691 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		E346323522F614B6003AD691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E34F110622F61B1200EECB30 /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E35E041122F6221700455541 /* star-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-128.png"; path = "../../../Downloads/star-128.png"; sourceTree = "<group>"; };
-		E35E041F22F62F2900455541 /* iconstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconstar.png; path = ../../../Downloads/iconstar.png; sourceTree = "<group>"; };
+		E3CAA0972322972E006CAFF1 /* star-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-128.png"; sourceTree = "<group>"; };
+		E3CAA09B232297FB006CAFF1 /* iconstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconstar.png; sourceTree = "<group>"; };
 		E3CE97C222F60DF400D315D1 /* Anki Beautify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anki Beautify.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CE97C522F60DF400D315D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3CE97C722F60DF400D315D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		E346322E22F614B6003AD691 /* Anki Beautify Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E35E041122F6221700455541 /* star-128.png */,
+				E3CAA0972322972E006CAFF1 /* star-128.png */,
 				E346322F22F614B6003AD691 /* Media.xcassets */,
 				E346323122F614B6003AD691 /* ActionRequestHandler.swift */,
 				E346323322F614B6003AD691 /* Action.js */,
@@ -179,7 +179,6 @@
 		E3CE97C422F60DF400D315D1 /* Anki Beautify */ = {
 			isa = PBXGroup;
 			children = (
-				E35E041F22F62F2900455541 /* iconstar.png */,
 				E3CE97C522F60DF400D315D1 /* AppDelegate.swift */,
 				E3CE97C722F60DF400D315D1 /* ViewController.swift */,
 				E346322722F611A9003AD691 /* PasteboardFormat.swift */,
@@ -187,6 +186,7 @@
 				E3CE97CC22F60DF600D315D1 /* Assets.xcassets */,
 				E3CE97CE22F60DF600D315D1 /* LaunchScreen.storyboard */,
 				E3CE97D122F60DF600D315D1 /* Info.plist */,
+				E3CAA09B232297FB006CAFF1 /* iconstar.png */,
 			);
 			path = "Anki Beautify";
 			sourceTree = "<group>";
@@ -308,7 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35E041222F6221800455541 /* star-128.png in Resources */,
+				E3CAA0982322972E006CAFF1 /* star-128.png in Resources */,
 				E346323422F614B6003AD691 /* Action.js in Resources */,
 				E346323022F614B6003AD691 /* Media.xcassets in Resources */,
 			);
@@ -318,8 +318,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35E042022F62F2900455541 /* iconstar.png in Resources */,
 				E3CE97D022F60DF600D315D1 /* LaunchScreen.storyboard in Resources */,
+				E3CAA09C232297FB006CAFF1 /* iconstar.png in Resources */,
 				E3CE97CD22F60DF600D315D1 /* Assets.xcassets in Resources */,
 				E3CE97CB22F60DF400D315D1 /* Main.storyboard in Resources */,
 			);

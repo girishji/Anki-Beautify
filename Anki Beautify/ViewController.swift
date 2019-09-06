@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //MARK: Properties
+    
+    @IBOutlet weak var mainButton: UIButton!
+    
+    //MARK: Actions
+    
+    @IBAction func mainButtonAction(_ sender: Any) {
+        PasteboardFormat.filterEnglishLines()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

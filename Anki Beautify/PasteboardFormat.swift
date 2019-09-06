@@ -11,6 +11,18 @@ import SwiftSoup
 
 class PasteboardFormat {
     
+    //let WebkitData = "com.apple.WebKit.custom-pasteboard-data"
+    static let PublicHTML = "public.html"
+    //let PublicRTF = "public.rtf"
+    //let PlainText = "public.utf8-plain-text"
+    //let FlatRTFD = "com.apple.flat-rtfd"
+    //let AppleRTFD = "com.apple.rtfd"
+    //let AttrStr = "com.apple.uikit.attributedstring"
+    static let WebArchive = "Apple Web Archive pasteboard type"
+    //let RichContent = "iOS rich content paste pasteboard type"
+    
+    private static var englishLines = ""
+    
     static func transform() {
         // girish:
         // All the keys I found in the first item of pasteboard (below)
@@ -39,15 +51,6 @@ class PasteboardFormat {
         //
         // HTML tags pl and gb are polish and english, see <pl...> and <gb style...>
         
-        //let WebkitData = "com.apple.WebKit.custom-pasteboard-data"
-        let PublicHTML = "public.html"
-        //let PublicRTF = "public.rtf"
-        //let PlainText = "public.utf8-plain-text"
-        //let FlatRTFD = "com.apple.flat-rtfd"
-        //let AppleRTFD = "com.apple.rtfd"
-        //let AttrStr = "com.apple.uikit.attributedstring"
-        let WebArchive = "Apple Web Archive pasteboard type"
-        //let RichContent = "iOS rich content paste pasteboard type"
         
         // In UIPasteboard, both value() and data() successfully return a value
         //    for all keys.
@@ -58,6 +61,7 @@ class PasteboardFormat {
         if let pData = pasteBoard.data(forPasteboardType: PublicHTML) {
             if let decodedString = String(data: pData, encoding: String.Encoding.utf8) {
                 //logLongString(str: decodedString)
+                reset()
                 if let formatted = formatForAnki(input: decodedString) {
                     //NSLog(formatted)
                     if let webArch = getPListXMLArchive(content: formatted) {
@@ -69,6 +73,19 @@ class PasteboardFormat {
         //printPasteboard()
     }
     
+    static func filterEnglishLines() {
+        let pasteBoard = UIPasteboard.general
+        //NSLog(englishLines)
+        if englishLines != "" {
+            if let webArch = getPListXMLArchive(content: englishLines) {
+                pasteBoard.setValue(webArch, forPasteboardType: WebArchive)
+            }
+        }
+    }
+    
+    static func reset() {
+        englishLines = ""
+    }
     
     // girish
     private static func formatForAnki(input: String) -> String? {
@@ -145,6 +162,7 @@ class PasteboardFormat {
         NSLog("item count: %d\n", pasteBoard.types.count)
     }
     
+    
     // girish: log long string
     private static func logLongString(str:String) {
         var newStr = String()
@@ -167,6 +185,7 @@ class PasteboardFormat {
         let TitleTxt = "font-size:[ ]+26.66"
         let FilterThis = "Przykłady użycia"
         var insidePrzyklad = false
+        var insideEnglishLine = false
         
         /**
          * Callback for when a node is first visited.
@@ -195,6 +214,15 @@ class PasteboardFormat {
                 if tag == "a" { // link
                     formatted += "<u>"
                 }
+                if tag == "gb" {
+                    insideEnglishLine = true
+                }
+                if tag == "span" && insideEnglishLine {
+                    if try element.className() == "tekst-gb" {
+                        // this is title text translation, ignore this
+                        insideEnglishLine = false
+                    }
+                }
                 if tag == "div" {
                     if try element.className() == "przyk sshow" {
                         insidePrzyklad = true
@@ -221,6 +249,11 @@ class PasteboardFormat {
                 } else {
                     formatted += textNode.text()
                 }
+                if insideEnglishLine {
+                    englishLines += "* "
+                    englishLines += textNode.text()
+                    englishLines += "<br>"
+                }
             } else if let element =  (node as? Element) { // reverse order as head function
                 if element.tagName() == "div" {
                     if try element.className() == "przyk sshow" {
@@ -229,6 +262,9 @@ class PasteboardFormat {
                 }
                 let tag = element.tagName()
                 
+                if tag == "gb" {
+                    insideEnglishLine = false
+                }
                 if tag == "a" { // link
                     formatted += "</u>"
                 }
@@ -258,6 +294,7 @@ class PasteboardFormat {
             }
             return false
         }
+        
     }
     
 }

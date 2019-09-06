@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ema-wb-T7g">
-                                <rect key="frame" x="0.0" y="661.5" width="414" height="20.5"/>
+                                <rect key="frame" x="0.0" y="701.5" width="414" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anki Beautify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxy-eb-hgj">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
@@ -29,18 +29,39 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNi-lU-BMD">
+                                <rect key="frame" x="80" y="204" width="254" height="100"/>
+                                <color key="backgroundColor" red="0.19737763096144659" green="0.27921468281004352" blue="0.56219640544041449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QAE-re-5DK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Filter English Lines">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="mainButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WIl-Km-0yD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ema-wb-T7g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0lH-lC-LAQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ema-wb-T7g" secondAttribute="bottom" constant="180" id="qih-Gs-rsu"/>
+                            <constraint firstItem="rNi-lU-BMD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="GtM-u7-tDT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rNi-lU-BMD" secondAttribute="trailing" constant="80" id="lqO-eX-pty"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ema-wb-T7g" secondAttribute="bottom" constant="140" id="qih-Gs-rsu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ema-wb-T7g" secondAttribute="trailing" id="rZH-n0-sLF"/>
+                            <constraint firstItem="rNi-lU-BMD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="zZc-d6-vNV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mainButton" destination="rNi-lU-BMD" id="IV4-gV-QrU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="103.79464285714285"/>
         </scene>
     </scenes>
 </document>
