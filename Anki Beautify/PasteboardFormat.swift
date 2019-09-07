@@ -250,9 +250,11 @@ class PasteboardFormat {
                     formatted += textNode.text()
                 }
                 if insideEnglishLine {
-                    englishLines += "* "
-                    englishLines += textNode.text()
-                    englishLines += "<br>"
+                    if blank(text: textNode.text()) == false {
+                        englishLines += "* "
+                        englishLines += textNode.text()
+                        englishLines += "<br>"
+                    }
                 }
             } else if let element =  (node as? Element) { // reverse order as head function
                 if element.tagName() == "div" {
@@ -293,6 +295,11 @@ class PasteboardFormat {
                 NSLog("girish: error in attr")
             }
             return false
+        }
+        
+        func blank(text: String) -> Bool {
+            let trimmed = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            return trimmed.isEmpty
         }
         
     }
